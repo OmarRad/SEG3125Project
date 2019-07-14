@@ -11,8 +11,18 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link rel="stylesheet" href="./css/material.min.css">
+	<script src="./js/material.min.js"></script>
+	<script src="./js/gen_validatorv4.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+	<link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gainz Tracker</title>
 </head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109588322-1"></script>
 
 <body>
 	<div>
@@ -62,71 +72,34 @@
 			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
 		</script>
 	</div>
-	<form action="/action_page.php" method="post" class="textt">
-		<!-- This is indicates where its being submitted to. Add a method="post" if we're sending lots of data, URL is limited to 3000 characters-->
-		<div class="Pre">
-			Prescription 1:
-			<input type="text" name="Prescription 1"><br>
-			<div style="float: left; margin-right: 7px">
-				<select name="mass/volume unit" class="form">
-					<option value="">mcg</option> <!-- That's micrograms -->
-					<option value="mg">mg</option>
-					<option value="g">g</option>
-					<option value="kg">kg</option>
-					<option value="mL">mL</option>
-					<option value="L">L</option>
-					<option value="mm">mm</option>
-					<option value="cm">cm</option>
-					<option value="m">m</option>
-					<option value="drops">drops</option>
-				</select>
-				<input type="text" name="number of times" placeholder="#" style="width: 50px">
-				times per
+	<div class="signup">
+		<h2>Log In</h2>
+		<form id="loginForm" action="signup_action.html">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="email" required>
+				<label class="mdl-textfield__label" for="email">E-mail Address</label>
 			</div>
-			<div style="display: inline-block">
-				<select name="time unit">
-					<option value="day">hour</option>
-					<option value="hour">day</option>
-					<option value="week">week</option>
-				</select><br><br>
+			<br>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="password" id="pass1" required>
+				<label class="mdl-textfield__label" for="pass1">Password</label>
 			</div>
-		</div>
-		<div class="Pre">
-			Prescription 2:
-			<input type="text" name="Prescription 2"><br>
-			<div style="float: left; margin-right: 7px">
-				<select name="mass/volume unit" class="form">
-					<option value="mcg">mcg</option> <!-- That's micrograms -->
-					<option value="mg">mg</option>
-					<option value="g">g</option>
-					<option value="kg">kg</option>
-					<option value="mL">mL</option>
-					<option value="L">L</option>
-					<option value="mm">mm</option>
-					<option value="cm">cm</option>
-					<option value="m">m</option>
-					<option value="drops">drops</option>
-				</select>
-				<input type="text" name="number of times" placeholder="#" style="width:50px">
-				times per
-			</div>
-			<div style="display: inline-block;">
-				<select name="time unit"">
-					<option value=" day">hour</option>
-					<option value="hour">day</option>
-					<option value="week">week</option>
-				</select><br><br>
-			</div>
-		</div>
-		<!-- Prescription 1, Dosage, (mass unit dropdown), (time unit dropdown)
-Prescription 2, Dosage, (mass unit dropdown), (time unit dropdown), (plus sign for more prescriptions) -->
-		<input type="submit" name="" class="submit">
-	</form>
-	<div class="results">
-		<h1>Results:</h1>
-		<div class="boxed">
-			These are the results:
-		</div>
+			<br><br>
+			<button class="mdl-button mdl-js-button mdl-button--accent">
+				Log In
+			</button>
+
+		</form>
+		<script type="text/javascript">
+			var frmvalidator = new Validator("loginForm");
+			frmvalidator.addValidation("email", "maxlen=50", "E-mail must be no more than 50 characters long.");
+			frmvalidator.addValidation("email", "email", "Please enter a valid E-mail address.");
+
+			frmvalidator.addValidation("pass1", "maxlen=20", "Password must be no more than 20 characters long.");
+			frmvalidator.addValidation("pass1", "minlen=4", "Password must be at least 4 characters long.");
+
+			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
+		</script>
 	</div>
 </body>
 

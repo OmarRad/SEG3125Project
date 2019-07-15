@@ -60,7 +60,7 @@
         <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
         <div id="cont"></div>
 
-        <p><input type="button" id="bt" value="Sumbit Data" onclick="sumbit()" /></p>
+        <p><a href="recomWorkout.html"><input type="button" id="bt" value="View next workout" /></a></p>
         <!-- <div class="text">
 		<p>The hardest lift of all is lifting your butt off the couch.</p>
 		<p>Just do it.</p>
@@ -132,24 +132,23 @@
         empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
     }
 
-    // EXTRACT AND SUBMIT TABLE DATA.
-    function sumbit() {
-        var myTab = document.getElementById('empTable');
-        var values = new Array();
+    // // EXTRACT AND SUBMIT TABLE DATA.
+    // function sumbit() {
+    //     var myTab = document.getElementById('empTable');
+    //     var values = new Array();
 
-        // LOOP THROUGH EACH ROW OF THE TABLE.
-        for (row = 1; row < myTab.rows.length - 1; row++) {
-            for (c = 0; c < myTab.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
+    //     // LOOP THROUGH EACH ROW OF THE TABLE.
+    //     for (row = 1; row < myTab.rows.length - 1; row++) {
+    //         for (c = 0; c < myTab.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
 
-                var element = myTab.rows.item(row).cells[c];
-                console.log(element)
-                if (element.childNodes[0].getAttribute('type') == 'text') {
-                    values.push("'" + element.childNodes[0].value + "'");
-                }
-            }
-        }
-        console.log(values);
-    }
+    //             var element = myTab.rows.item(row).cells[c];
+    //             if (element.childNodes[0].getAttribute('type') == 'text') {
+    //                 values.push("'" + element.childNodes[0].value + "'");
+    //             }
+    //         }
+    //     }
+    //     console.log(values);
+    // }
 
     function myFunction() {
         // Declare variables 
@@ -157,38 +156,16 @@
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
         table = document.getElementById("empTable");
-        console.log(table)
         tr = table.getElementsByTagName("tr");
-        console.log(tr)
 
-        // Loop through all table rows, and hide those who don't match the search query
-        // for (i = 0; i < tr.length; i++) {
-        //     console.log(i)
-        //     td = tr[i].getElementsByTagName("td")[0];
-        //     console.log(td)
-        //     if (td) {
-        //         txtValue = td.textContent || td.innerText;
-        //         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        //             tr[i].style.display = "";
-        //         } else {
-        //             tr[i].style.display = "none";
-        //         }
-        //     }
-        // }
         for (row = 1; row < table.rows.length - 1; row++) {
             for (c = 0; c < table.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
 
                 var element = table.rows.item(row).cells[c];
-                console.log(c)
-                console.log(element)
-                console.log(filter)
-                console.log(element.childNodes[0].value.toUpperCase())
                 if (element.childNodes[0].value.toUpperCase().includes(filter) || filter === "") {
-                    console.log('184')
                     table.rows[row].style.display = "";
                     break;
                 } else {
-                    console.log('187')
                     table.rows[row].style.display = "none";
                 }
             }

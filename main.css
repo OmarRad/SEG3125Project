@@ -11,10 +11,11 @@ ul.navbar {
 	overflow: hidden;
 	background-color: #A1E8AF;
 	font-variant: small-caps;
+	height: 30px;
 }
 li.navbar {
 	float: right;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 /* .top {
@@ -103,7 +104,65 @@ input.submit {
 	margin-right: auto;
 	margin-left: auto;
 }
+label{
+	font-size:18px;
+	vertical-align: middle;
+  }
+  #b{
+	background-color:#94C595;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:28px;
+	border:1px solid #94C595;
+	display:inline-block;
+	cursor:pointer;
+	color:#3A2449;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:15px;
+	padding:10px; 
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#b:hover{
+	 background-color:#5cbf2a;
 
+}
+#b2{
+	background-color:#94C595;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #94C595;
+	display:inline-block;
+	cursor:pointer;
+	color:#3A2449;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:15px;
+	padding:10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#b2:hover{
+	 background-color:#5cbf2a;
+
+}
+
+#wrapper{
+	width:200px;
+	height:200px;
+
+	padding:2%;
+	display: table-cell;
+	text-align: center;
+	vertical-align: bottom;
+}
+#body{
+	display: table;
+}
+  
+input[type="radio"]{
+	vertical-align: middle;
+  }
 div.Pre {
 	padding-left: 165px;
 }

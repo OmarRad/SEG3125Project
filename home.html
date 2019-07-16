@@ -43,24 +43,23 @@
 <body onload="createTable()">
     <div>
         <ul class="navbar">
-            <li class="logo"><a href="index.html">Gainz Tracker</a></li>
+            <li class="logo"><a href="home.html">Gainz Tracker</a></li>
             <li class="navbar"><a href="home.html">Dashboard</a></li>
             <li class="navbar"><a href="login.html">Log out</a></li>
             <!-- <li class="navbar"><a href="index.html">Home</a></li> -->
         </ul>
     </div>
 
-    <ps class = "top">Click the "Add New Row" button to add row to the table. Enter values in each row and press the "Submit Data"
-        button. You can check the result in your browsers console window.</p>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+    <ps class = "top">Click the "Add New Exercise button to log in new entries" .</p>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Exercises..">
         <p>
-            <input type="button" id="addRow" value="Add New Row" onclick="addRow()" />
+            <input type="button" id="b" value="Add New Execise" onclick="addRow()" />
         </p>
 
         <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
         <div id="cont"></div>
 
-        <p><a href="recomWorkout.html"><input type="button" id="bt" value="View next workout" /></a></p>
+        <div id = "wrapper"><p><a href="recomWorkout.html"><input type="button"  id="b2" value="View next workout" /></a></p></div>
         <!-- <div class="text">
 		<p>The hardest lift of all is lifting your butt off the couch.</p>
 		<p>Just do it.</p>
@@ -70,7 +69,7 @@
 <script>
     // ARRAY FOR HEADER.
     var arrHead = new Array();
-    arrHead = ['', 'Emp. Name', 'Designation', 'Age'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
+    arrHead = ['Excercise ', 'Set',  'Repititions', 'Weight' , 'Date'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
 
     // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
     // ADD THE TABLE TO YOUR WEB PAGE.

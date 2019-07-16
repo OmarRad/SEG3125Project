@@ -38,41 +38,6 @@
 		<p class = "slogen"><strong>Just do it.</strong></p>
 	</div>
 	<div class="signup">
-		<h2>Register Now</h2>
-		<form id="signupForm" action="home.html">
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="email" required>
-				<label class="mdl-textfield__label" for="email">E-mail Address</label>
-			</div>
-			<br>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="password" id="pass1" required>
-				<label class="mdl-textfield__label" for="pass1">Password</label>
-			</div>
-			<br>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="password" id="pass2" required>
-				<label class="mdl-textfield__label" for="pass2">Repeat Password</label>
-			</div>
-			<br><br>
-			<button class="mdl-button mdl-js-button mdl-button--accent">
-				Register
-			</button>
-
-		</form>
-		<script type="text/javascript">
-			var frmvalidator = new Validator("signupForm");
-			frmvalidator.addValidation("email", "maxlen=50", "E-mail must be no more than 50 characters long.");
-			frmvalidator.addValidation("email", "email", "Please enter a valid E-mail address.");
-
-			frmvalidator.addValidation("pass1", "maxlen=20", "Password must be no more than 20 characters long.");
-			frmvalidator.addValidation("pass1", "minlen=4", "Password must be at least 4 characters long.");
-
-
-			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
-		</script>
-	</div>
-	<div class="signup">
 		<h2>Log In</h2>
 		<form id="loginForm" action="home.html">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -101,6 +66,49 @@
 			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
 		</script>
 	</div>
+	<div class="signup">
+		<h2>Register Now</h2>
+		<form id="signupForm" action="home.html">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="email" required>
+				<label class="mdl-textfield__label" for="email">E-mail Address</label>
+			</div>
+			<br>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="password" id="pass1" required>
+				<label class="mdl-textfield__label" for="pass1">Password</label>
+			</div>
+			<br>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="password" id="pass2" required>
+				<label class="mdl-textfield__label" for="pass2">Repeat Password</label>
+				<br><br>
+				<p>Select Workout Goal</p>
+				<input type="radio" name="gender" value="male" checked> <label>Gain Muscle Mass</label>
+					<input type="radio" name="gender" value="female"> <label>lose Fat</label> 
+					
+			</div>
+
+			<br><br>
+
+			<button class="mdl-button mdl-js-button mdl-button--accent">
+				Register
+			</button>
+
+		</form>
+		<script type="text/javascript">
+			var frmvalidator = new Validator("signupForm");
+			frmvalidator.addValidation("email", "maxlen=50", "E-mail must be no more than 50 characters long.");
+			frmvalidator.addValidation("email", "email", "Please enter a valid E-mail address.");
+
+			frmvalidator.addValidation("pass1", "maxlen=20", "Password must be no more than 20 characters long.");
+			frmvalidator.addValidation("pass1", "minlen=4", "Password must be at least 4 characters long.");
+
+
+			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
+		</script>
+	</div>
+	
 </body>
 
 </html>

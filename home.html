@@ -1,120 +1,88 @@
 <!DOCTYPE html>
 <html>
-<!-- THE COLOUR SHCEME
-	 #A1E8AF
-	 #94C595
-	 #747C92
-	 #372772
-	 #3A2449 -->
 
 <head>
+    <!-- main style sheet -->
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <!-- Google material design to help with styling -->
     <link rel="stylesheet" href="./css/material.min.css">
     <script src="./js/material.min.js"></script>
-    <script src="./js/gen_validatorv4.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gainz Tracker</title>
-    <style>
-        table {
-            width: 70%;
-            font: 17px Calibri;
-        }
-
-        table,
-        th,
-        td {
-            border: solid 1px #DDD;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
-    </style>
 </head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109588322-1"></script>
 
-<body onload="createTable()">
+<body onload="createTable()"> <!--Create the dynamic table-->
     <div>
         <ul class="navbar">
             <li class="logo"><a href="home.html">Gainz Tracker</a></li>
             <li class="navbar"><a href="home.html">Dashboard</a></li>
             <li class="navbar"><a href="login.html">Log out</a></li>
-            <!-- <li class="navbar"><a href="index.html">Home</a></li> -->
         </ul>
     </div>
 
     <ps class = "top">Click the "Add New Exercise button to log in new entries" .</p>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Exercises..">
+        <input type="text" id="myInput" onkeyup="addRow2()" placeholder="Search for Exercises..">
         <p>
             <input type="button" id="b" value="Add New Execise" onclick="addRow()" />
         </p>
 
-        <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
+        <!--container for the dynamic table-->
         <div id="cont"></div>
 
         <div id = "wrapper"><p><a href="recomWorkout.html"><input type="button"  id="b2" value="View next workout" /></a></p></div>
-        <!-- <div class="text">
-		<p>The hardest lift of all is lifting your butt off the couch.</p>
-		<p>Just do it.</p>
-	</div> -->
 
 </body>
 <script>
-    // ARRAY FOR HEADER.
+    // array for table headers
     var arrHead = new Array();
-    arrHead = ['', 'Excercise ', 'Set',  'Repititions', 'Weight' , 'Date'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
+    arrHead = ['', 'Excercise ', 'Set',  'Repititions', 'Weight' , 'Date'];
 
     // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
     // ADD THE TABLE TO YOUR WEB PAGE.
     function createTable() {
         var empTable = document.createElement('table');
-        empTable.setAttribute('id', 'empTable');            // SET THE TABLE ID.
+        empTable.setAttribute('id', 'empTable'); // set table id
 
         var tr = empTable.insertRow(-1);
 
         for (var h = 0; h < arrHead.length; h++) {
-            var th = document.createElement('th');          // TABLE HEADER.
+            var th = document.createElement('th'); // insert table headers
             th.innerHTML = arrHead[h];
             tr.appendChild(th);
         }
 
         var div = document.getElementById('cont');
-        div.appendChild(empTable);    // ADD THE TABLE TO YOUR WEB PAGE.
+        div.appendChild(empTable);    // add table to its container
     }
 
-    // ADD A NEW ROW TO THE TABLE.s
-    function addRow() {
+    function addRow() { // method to add row to table
         var empTab = document.getElementById('empTable');
 
-        var rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
-        var tr = empTab.insertRow(rowCnt);      // TABLE ROW.
+        var rowCnt = empTab.rows.length; // get number of rows
+        var tr = empTab.insertRow(rowCnt);
         tr = empTab.insertRow(rowCnt);
 
         for (var c = 0; c < arrHead.length; c++) {
-            var td = document.createElement('td');          // TABLE DEFINITION.
+            var td = document.createElement('td');
             td = tr.insertCell(c);
 
-            if (c == 0) {           // FIRST COLUMN.
-                // ADD A BUTTON.
+            if (c == 0) {           // if its the first column
+                // add the remove button
                 var button = document.createElement('input');
 
-                // SET INPUT ATTRIBUTE.
+                // set the input attributes
                 button.setAttribute('type', 'button');
                 button.setAttribute('value', 'Remove');
 
-                // ADD THE BUTTON's 'onclick' EVENT.
+                // add an onclick event to the button
                 button.setAttribute('onclick', 'removeRow(this)');
 
                 td.appendChild(button);
             }
             else {
-                // CREATE AND ADD TEXTBOX IN EACH CELL.
+                // if not first row, create an add a textbox to each cell
                 var ele = document.createElement('input');
                 ele.setAttribute('type', 'text');
                 ele.setAttribute('value', '');
@@ -124,32 +92,12 @@
         }
     }
 
-    // DELETE TABLE ROW.
-    function removeRow(oButton) {
+    function removeRow(oButton) { // function to remove row
         var empTab = document.getElementById('empTable');
-        empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
+        empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);
     }
 
-    // // EXTRACT AND SUBMIT TABLE DATA.
-    // function sumbit() {
-    //     var myTab = document.getElementById('empTable');
-    //     var values = new Array();
-
-    //     // LOOP THROUGH EACH ROW OF THE TABLE.
-    //     for (row = 1; row < myTab.rows.length - 1; row++) {
-    //         for (c = 0; c < myTab.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
-
-    //             var element = myTab.rows.item(row).cells[c];
-    //             if (element.childNodes[0].getAttribute('type') == 'text') {
-    //                 values.push("'" + element.childNodes[0].value + "'");
-    //             }
-    //         }
-    //     }
-    //     console.log(values);
-    // }
-
-    function myFunction() {
-        // Declare variables 
+    function addRow2() { // function to add row
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
@@ -157,8 +105,7 @@
         tr = table.getElementsByTagName("tr");
 
         for (row = 1; row < table.rows.length - 1; row++) {
-            for (c = 0; c < table.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
-
+            for (c = 0; c < table.rows[row].cells.length; c++) {   // for each cell in a row
                 var element = table.rows.item(row).cells[c];
                 if (element.childNodes[0].value.toUpperCase().includes(filter) || filter === "") {
                     table.rows[row].style.display = "";

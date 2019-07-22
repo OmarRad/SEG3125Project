@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html>
-<!-- THE COLOUR SHCEME
-	 #A1E8AF
-	 #94C595
-	 #747C92
-	 #372772
-	 #3A2449 -->
 
 <head>
+	<!-- main style sheet -->
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<!-- Google material design to style log in -->
 	<link rel="stylesheet" href="./css/material.min.css">
 	<script src="./js/material.min.js"></script>
+	<!-- Used for log in and register field validation -->
 	<script src="./js/gen_validatorv4.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-	<link rel="stylesheet" href="styles.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gainz Tracker</title>
 </head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109588322-1"></script>
 
 <body>
 	<div>
 		<ul class="navbar">
 			<li class="logo"><a href="login.html">Gainz Tracker</a></li>
-			<!-- <li class="navbar"><a href="about.html">About</a></li>
-			<li class="navbar"><a href="contact.html">Contact</a></li>
-			<li class="navbar"><a href="index.html">Home</a></li> -->
 		</ul>
 	</div>
 	<div class="text">
-		<p class = "slogen"><strong>The hardest lift of all is lifting your butt off the couch.</strong></p>
-		<p class = "slogen"><strong>Just do it.</strong></p>
+		<p class="slogen"><strong>The hardest lift of all is lifting your butt off the couch.</strong></p>
+		<p class="slogen"><strong>Just do it.</strong></p>
 	</div>
 	<div class="signup">
 		<h2>Log In</h2>
@@ -85,8 +70,8 @@
 				<br><br>
 				<p>Select Workout Goal</p>
 				<input type="radio" name="gender" value="male" checked> <label>Gain Muscle Mass</label>
-					<input type="radio" name="gender" value="female"> <label>Lose Fat</label> 
-					
+				<input type="radio" name="gender" value="female"> <label>Lose Fat</label>
+
 			</div>
 
 			<br><br>
@@ -108,7 +93,7 @@
 			frmvalidator.addValidation("pass2", "eqelmnt=pass1", "Your passwords must match.");
 		</script>
 	</div>
-	
+
 </body>
 
 </html>
